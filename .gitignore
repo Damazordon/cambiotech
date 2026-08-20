@@ -216,3 +216,7 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+
+#arquivos raw gerados em testes locais 
+ingestion/fx_rates/raw_*.json
