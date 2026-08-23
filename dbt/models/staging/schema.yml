@@ -1,0 +1,32 @@
+version: 2
+
+models:
+  - name: stg_orders
+    description: "Ordens de câmbio limpas e normalizadas"
+    columns:
+      - name: order_id
+        description: "Identificador único da ordem"
+        tests:
+          - not_null
+          - unique
+      - name: execution_date
+        description: "Data da execução, tipada"
+        tests:
+          - not_null
+      - name: currency_pair
+        description: "Par de moeda normalizado"
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['USDBRL']
+
+  - name: stg_fx_rates
+    description: "Cotações diárias deduplicadas"
+    columns:
+      - name: execution_date
+        tests:
+          - not_null
+          - unique
+      - name: close_rate
+        tests:
+          - not_null

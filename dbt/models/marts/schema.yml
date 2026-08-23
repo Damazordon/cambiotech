@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: mart_reconciliacao
+    description: "Reconciliação de ordens executadas vs. taxa oficial de mercado"
+    columns:
+      - name: order_id
+        tests:
+          - not_null
+          - unique
+      - name: trade_volume
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+              inclusive: false
+      - name: executed_rate
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+              inclusive: false
