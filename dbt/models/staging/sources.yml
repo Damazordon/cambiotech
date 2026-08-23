@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: bronze
+    database: workspace
+    schema: default
+    tables:
+      - name: bronze_fx_rates
+        description: "Cotações diárias via API Alpha Vantage"
+      - name: bronze_orders
+        description: "Ordens de câmbio executadas espelho da fonte transacional"
