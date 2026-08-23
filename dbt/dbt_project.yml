@@ -1,0 +1,12 @@
+name: 'cambiotech'
+version: '1.0.0'
+config-version: 2
+profile: 'cambiotech'
+model-paths: ["models"]
+test-paths: ["tests"]
+models:
+  cambiotech:
+    staging:
+      +materialized: view
+    marts:
+      +materialized: table
