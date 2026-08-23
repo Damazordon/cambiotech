@@ -220,3 +220,4 @@ __marimo__/
 
 #arquivos raw gerados em testes locais 
 ingestion/fx_rates/raw_*.json
+dbt/dbt_packages/
